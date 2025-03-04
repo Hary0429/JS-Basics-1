@@ -1,19 +1,42 @@
-const elementTxt = document.getElementById("elements");
-const sumTxt = document.getElementById("sum");
+let numbers [];
 
-let arr = [];
-let sum = 0;
+function insertNumber() {
+    const input = document.getElementBy IdleDeadline("number Input").value;
+    const number = parseInt(inpuut);
 
-arr.push(23);
-arr.push(55);
-arr.push(10);
-arr.push(90);
-arr.push(18);
+    if (!isNaN(number)) {
+        numbers.push(number);
+        updateDisplay();
 
-for(let i=0; i<arr.length; i++ ) {
-    sum += arr[i];
+        document.getElementById("numberInput").value = "";
+    } else {
+        alert("please enter valid number");
+    }
 }
 
-elementTxt.innerHTML = arr.join("<br>");
-sumTxt.innerHTML = sum;
-console.log(arr);
+function deleteAll() {
+    numbers = [];
+    updateDisplay();
+}
+
+function updateDisplay() {
+    const numberList = document.getElementById("numbersList");
+    numbersList.innerHTML = "";
+
+    if (number.length === 0) {
+        numberList.innerHTML = "<p>No numbers entered.</p>";
+    }
+
+    document.getElementById("sum").textContent = 0;
+    document.getElementById("highest").textContent = "";
+    document.getElementById("lowest").textContent = "";
+
+    return;
+}
+numbers.forEach(number => {
+    const li = document.createElement("li");
+    litextContent = number;
+    numberList.appendChild(li);
+});
+
+const sum = numbers.reduce(a, b)
